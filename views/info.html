@@ -8,7 +8,25 @@
     <title>Week 5</title>
 </head>
 <body>
-    <h1>Can you believe it's week 5 already?</h1>
-    <h2>We're almost half-way there!</h2>
+    <h1>{{ @title }}</h1>
+    <h2>Can you believe it's week 5 already?</h2>
+    <h3>We're almost half-way there!</h3>
+
+    <p>You are logged in as {{ @username }} with password {{ @password }}</p>
+
+    <h2>Temperature</h2>
+    <p>Fahrenheit: {{ @temp }}</p>
+    <p>Celsius: {{ round((@temp-32) * (5/9), 2) }}</p>
+
+    <h2>Fruits</h2>
+    <repeat group="{{ @fruits }}" value="{{ @fruits }}">
+        <p>{{ @fruit }}</p>
+    </repeat>
+
+    <h2>Desserts</h2>
+    <repeat group="{{ @desserts }}" key="{{ @val }}" value="{{ @text }}">
+        <input type="checkbox" value="{{ @val }}">{{ @text }}<br>
+    </repeat>
+
 </body>
 </html>
